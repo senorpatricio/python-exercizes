@@ -1,21 +1,27 @@
 __author__ = 'patrickh'
-print 'Hello World!'
 
-def main():
-    try:
-        print 1 + 'hello'
-    except:
-        print ' we failed'
-    print 'hello we continued with script'
+person = {
+    "name": {
+        'first_name': "Patrick",
+        'last_name': 'Harding',
+        },
+    "age": 31,
+    'hair_color': 'brown',
+    'eye_color': 'blue',
+    'is_cool': True
+}
 
-main()
+# print person.get('hair_color')
+# print person["is_cool"]
+print person.items()
 
-def rain():
-    try:
-        print 1 + 'hello'
-    except Exception, e:
-        print str(e)
+# things = person.keys()
+# things.sort()
+# print things
+# my_tuple = ('thing1', 'thing2')
+# item1, item2, = my_tuple
+# print item1
+# print item2
 
-    print 'script continues'
-
-rain()
+# for key, val in person.items():
+#     print "%s is the key, and %s is the value" % (key, val)

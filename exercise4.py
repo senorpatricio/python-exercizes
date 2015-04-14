@@ -13,6 +13,7 @@ while ans:
     if ans == "1":
         with open('text.txt', 'w+') as f:
             response = raw_input("Type what you feel: ")
+            f.write(response)
     # if the user chooses 2, prompt to enter another piece of data, which will write to the screen
     elif ans == "2":
         response = raw_input("Type whatever you want to right now: ")

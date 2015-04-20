@@ -1,38 +1,23 @@
-from collections import Counter
-import random
-import string
+# inheritance stuff
 
+from sys import argv
 
-__author__ = 'jared'
+script, user_name = argv
+prompt = '> '
 
+print "Hi %s, I'm the %s script." % (user_name, script)
+print "I'd like to ask you a few questions."
+print "Do you like me %s?" % user_name
+likes = raw_input(prompt)
 
-def generate_random_string():
-    symbols = "!@#$%^&*()_+-=/|{}\\<>?`~"
-    size = random.randint(1, 500000)
-    return "".join(random.choice(string.ascii_lowercase + string.ascii_uppercase + string.digits + symbols)
-                   for _ in range(size))
+print "Where do you live %s?" % user_name
+lives = raw_input(prompt)
 
+print "What kind of computer do you have?"
+computer = raw_input(prompt)
 
-def main():
-    with open("exercise_five.dat", "w+") as f:
-        for x in range(0, 10):
-            data = generate_random_string()
-            f.write(data + "\n")
-        f.close()
-    with open("exercise_five.dat", 'r') as f:
-        all_chars_count = 0
-        all_chars = ""
-        for line in f.readlines():
-            line = line.strip()
-            all_chars += line
-            all_chars_count += len(line)
-            print line + "\n" + "*"*220 + "\nTotal Characters for the above string: " + str(len(line)) + "\nMost Common: "
-            print Counter(line).most_common()
-
-        print "\n" + "*"*220 + "\nTotal characters for all of the above strings: " + str(all_chars_count) + "\nMost common: "
-        print Counter(all_chars).most_common()
-
-
-
-
-if __name__ == '__main__': main()
+print """
+Alright, so you said %r about liking me.
+You live in %r. Not sure where that is.
+And you have a %r computer. Nice
+""" % (likes, lives, computer)

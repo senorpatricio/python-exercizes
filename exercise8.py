@@ -23,7 +23,7 @@ def fib_improved(n, p0, p1):
 
 
 start = clock()
-result = naive_fib(n)
+result = naive_fib()
 stop = clock()
 difference = (stop - start) * 1000
 
